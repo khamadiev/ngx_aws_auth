@@ -168,7 +168,7 @@ static inline const ngx_str_t* ngx_aws_auth__canonize_query_string(ngx_pool_t *p
 
 static inline const ngx_str_t* ngx_aws_auth__host_from_bucket(ngx_pool_t *pool,
 		const ngx_str_t *s3_bucket) {
-	static const char HOST_PATTERN[] = ".s3.amazonaws.com";
+	static const char HOST_PATTERN[] = ".storage.yandexcloud.net";
 	ngx_str_t *host;
 
 	host = ngx_palloc(pool, sizeof(ngx_str_t));
