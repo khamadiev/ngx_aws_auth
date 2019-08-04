@@ -59,7 +59,7 @@ def make_headers(req_time, bucket, aws_headers, content_hash):
     headers = []
     headers.append(['x-amz-content-sha256', content_hash])
     headers.append(['x-amz-date', req_time])
-    headers.append(['Host', '%s.s3.amazonaws.com' % (bucket)])
+    headers.append(['Host', '%s.storage.yandexcloud.net' % (bucket)])
 
     hmap = {}
     for x in headers:
@@ -115,7 +115,7 @@ def sign(req_time, access_id, key, scope, bucket, url, qs_map, aws_headers):
 
 def get_data(req_time, access_id, key, scope, bucket, url, qs_map, aws_headers):
     s = sign(req_time, access_id, key, scope, bucket, url, qs_map, aws_headers)
-    rurl = "http://%s.s3.amazonaws.com%s" % (bucket, url)
+    rurl = "http://%s.storage.yandexcloud.net%s" % (bucket, url)
 #    print rurl
 #    print s
     q = Request(rurl)
